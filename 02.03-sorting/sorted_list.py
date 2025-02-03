@@ -18,26 +18,26 @@ def insert(lst, value):
     #     Set the array to the new array.
     #
     # NOTE: Inserting into a sorted list is almost exactly the same as adding
-    #       to an unsorted array list. The fundamental difference is that the
+    #       to an (unsorted) array list. The fundamental difference is that the
     #       caller cannot specify an index at which to insert; we have to find
     #       the appropriate index to maintain sorted order.
     #
     # Start with i being the size.
-    # While i - 1 is greater than or equal to 0
-    #  and the element at i - 1 is greater than the given value do:
+    # While i - 1 is greater than or equal to zero
+    #  and the element at i - 1 is greater than the given value, do:
     #     Set the element at i in the array to the element at i - 1.
     #     Decrement i.
     #
-    # Set the element at i in the array to the given value.
+    # Set the element at the given idx in the array to the given value.
     # Increment the size.
     pass
 
 
 def remove(lst, idx):
-    # NOTE: Similarly, removing from a sorted list ought to be the same as
-    #       removing from an unsorted list, we just have to maintain sorted
-    #       order -- which, in the case of remove, requires *no* additional
-    #       logic, because we cannot ruin sorted order by *removing* elements.
+    # NOTE: Likewise, removing from a sorted list is the same as removing from
+    #       an array list while maintaining sorted order -- in the case of
+    #       removing, that requires no additional logic, because removing from
+    #       a sorted list cannot possibly result in an unsorted list.
     #
     # For i from the given idx to the size - 1, do:
     #     Set the element at i in the array to the element at i + 1.
@@ -63,12 +63,15 @@ def find(lst, value):
 
 
 def create(array, size):
-    # NOTE: This is not the most efficient way to sort a list -- it has worst-
-    #       and average-case complexity O(n^2) -- but it is trivial to
-    #       implement given a working "insert" function.
+    # NOTE: This is not the best possible way to sort -- essentially, it turns
+    #       out to be faster to consider sorting all elements at once instead
+    #       of one element at a time -- but given a working insertion function,
+    #       an insertion sort is trivial to implement.
     #
     # Create a new, empty sorted list.
-    # For i from 0 to the given size - 1, do:
+    #
+    # For i from 0 to the given size, do:
     #     Insert the element at i in the given array into the new sorted list.
+    #
     # Return the new sorted list.
     pass
