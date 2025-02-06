@@ -28,7 +28,7 @@ def insert(lst, value):
     #     Set the element at i in the array to the element at i - 1.
     #     Decrement i.
     #
-    # Set the element at the given idx in the array to the given value.
+    # Set the element at i in the array to the given value.
     # Increment the size.
     pass
 
