@@ -23,7 +23,7 @@ def insert(lst, value):
     #     Set the element at i in the array to the element at i - 1.
     #     Decrement i.
     #
-    # Set the element at the given idx in the array to the given value.
+    # Set the element at i in the array to the given value.
     # Increment the size.
     pass
 
@@ -53,15 +53,44 @@ def find(lst, value):
 
 
 def create(array, size):
-    # NOTE: This is not the best possible way to sort -- essentially, it turns
-    #       out to be faster to consider sorting all elements at once instead
-    #       of one element at a time -- but given a working insertion function,
-    #       an insertion sort is trivial to implement.
+    # Sort the given array: with low being 0, high being size - 1.
+    # Return a new sorted list containing the sorted array.
+    pass
+
+
+def _sort(array, low, high):
+    # NOTE: It is possible to write an iterative merge sort -- it is possible
+    #       to write *anything* iteratively -- but a merge sort lends itself
+    #       naturally to recursion. We must repeatedly identify and sort
+    #       smaller arrays: smaller versions of the same problem.
     #
-    # Create a new, empty sorted list.
+    # If low is equal to high:
+    #     Return a new array containing only the element at low in the array.
+    # Else, do:
+    #     Set the mid index to (high + low) // 2.
+    #     Recursively sort the left half: with low being low, high being mid.
+    #     Recursively sort the right half: with low being mid + 1, high being high.
+    #     Merge the sorted halves.
+    #     Return the merged array.
+    pass
+
+def _merge(array_a, size_a, array_b, size_b):
+    # Create a new array of capacity size_a + size_b.
+    # Start with indices i, j, and k all being 0.
     #
-    # For i from 0 to the given size, do:
-    #     Insert the element at i in the given array into the new sorted list.
+    # While i is less than size_a or j is less than size_b, do:
+    #     If i is greater than or equal to size_a, then:
+    #         Set the k'th of the new array to the j'th of array_b.
+    #         Increment j and k.
+    #     Else if j is greater than or equal to size_b, then:
+    #         Set the k'th of the new array to the i'th of array_a.
+    #         Increment i and k.
+    #     Else if the j'th of array_b is less than the i'th of array_a, then:
+    #         Set the k'th of the new array to the j'th of array_b.
+    #         Increment j and k.
+    #     Else, do:
+    #         Set the k'th of the new array to the i'th of array_a.
+    #         Increment i and k.
     #
-    # Return the new sorted list.
+    # Return the new array.
     pass
