@@ -27,10 +27,38 @@ class Node:
 
 
 def combine(value, left, right):
+    # Create a new tree containing the given value.
+    # Set the new tree's root's left to the left tree's root.
+    # Set the new tree's root's right to the right tree's root.
+    # Set the new tree's size to the sum of the left tree's size, the right
+    #  tree's size, and 1 (for the root).
+    # Return the new tree.
     pass
 
 
 def postorder(tree):
+    # NOTE: Trees are recursively defined structures:
+    #         * The smallest trees consist of 0 or 1 nodes.
+    #         * All larger trees are the result of combining smaller trees.
+    #       ...however, BinaryTree is *not* recursively defined; Node is. A
+    #       BinaryTree does not contain BinaryTrees, but a Node contains Nodes.
+    #
+    # Traverse the given tree's root.
+    pass
+
+
+def _traverse(node):
+    # NOTE: In a post-order traversal, parents are traversed after children,
+    #       thus, we must recurse on our children before traversing ourselves.
+    #
+    # If the given node is None, then:
+    #     (there is no node to traverse -- perform whatever default operation
+    #      should be performed on empty trees)
+    # Else, do:
+    #     Recursively traverse the given node's left child.
+    #     Recursively traverse the given node's right child.
+    #     (traverse the given node -- perform whatever operation should be
+    #      performed on each node in the tree, e.g., enqueue it to a queue)
     pass
 
 
