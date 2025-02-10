@@ -54,8 +54,35 @@ def _traverse(node):
 
 
 def preorder(tree):
+    # NOTE: Since function calls have LIFO behavior, any recursive function can
+    #       be written iteratively by maintaining a "stack of jobs".
+    #
+    # Create an empty stack.
+    # Push the given tree's root onto the stack.
+    #
+    # While the stack is not empty, do:
+    #     Pop a current node off of the stack.
+    #     (traverse the current node)
+    #     If the current node's right is not None, then:
+    #         Push the current node's right onto the stack.
+    #     If the current node's left is not None, then:
+    #         Push the current node's left onto the stack.
+    #
+    # NOTE: In this case, the "jobs" to be completed are the nodes that have
+    #       yet to be traversed. Once the stack is empty, there are no more
+    #       nodes to traverse.
     pass
 
 
 def levelorder(tree):
+    # Create an empty queue.
+    # Enqueue the given tree's root onto the queue.
+    #
+    # While the queue is not empty, do:
+    #     Dequeue a current node off of the queue.
+    #     (traverse the current node)
+    #     If the current node's left is not None, then:
+    #         Enqueue the current node's left onto the queue.
+    #     If the current node's right is not None, then:
+    #         Enqueue the current node's right onto the queue.
     pass
