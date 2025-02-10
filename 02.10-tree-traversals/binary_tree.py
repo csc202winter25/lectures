@@ -65,9 +65,9 @@ def preorder(tree):
     # While the stack is not empty, do:
     #     Pop a current node off of the stack.
     #     (traverse the current node)
-    #     If the current node's right is not None:
+    #     If the current node's right is not None, then:
     #         Push the current node's right onto the stack.
-    #     If the current node's left is not None:
+    #     If the current node's left is not None, then:
     #         Push the current node's left onto the stack.
     #
     # NOTE: In this case, the "jobs" to be completed are the nodes yet to be
@@ -89,8 +89,8 @@ def levelorder(tree):
     # While the queue is not empty, do:
     #     Dequeue a current node off of the queue.
     #     (traverse the current node)
-    #     If the current node's left is not None:
+    #     If the current node's left is not None, then:
     #         Enqueue the current node's left onto the queue.
-    #     If the current node's right is not None:
+    #     If the current node's right is not None, then:
     #         Enqueue the current node's right onto the queue.
     pass
