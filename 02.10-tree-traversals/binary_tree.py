@@ -54,8 +54,43 @@ def _traverse(node):
 
 
 def preorder(tree):
+    # NOTE: It is certainly possible to implement a pre-order traversal as a
+    #       minor modification to a post-order traversal, but for the sake of
+    #       example, any recursive function can be rewritten iteratively by
+    #       maintaining a "stack of jobs".
+    #
+    # Create an empty stack.
+    # Push the given tree's root onto the stack.
+    #
+    # While the stack is not empty, do:
+    #     Pop a current node off of the stack.
+    #     (traverse the current node)
+    #     If the current node's right is not None:
+    #         Push the current node's right onto the stack.
+    #     If the current node's left is not None:
+    #         Push the current node's left onto the stack.
+    #
+    # NOTE: In this case, the "jobs" to be completed are the nodes yet to be
+    #       traversed. Initially, the only node we know of is the root. Once
+    #       the stack is empty, there are no more "jobs" to complete, which
+    #       means there are no more nodes to be traversed.
     pass
 
 
 def levelorder(tree):
+    # NOTE: With a "stack of jobs", siblings are pushed before children, thus,
+    #       children are popped and traversed before siblings. If we wish to
+    #       traverse siblings before children, then we must replace the "stack
+    #       of jobs" with a "queue of jobs".
+    #
+    # Create an empty queue.
+    # Enqueue the given tree's root onto the queue.
+    #
+    # While the queue is not empty, do:
+    #     Dequeue a current node off of the queue.
+    #     (traverse the current node)
+    #     If the current node's left is not None:
+    #         Enqueue the current node's left onto the queue.
+    #     If the current node's right is not None:
+    #         Enqueue the current node's right onto the queue.
     pass
