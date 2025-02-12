@@ -30,31 +30,32 @@ def insert(bst, key):
     #       of that BST (with the given key). Note that not all insertions will
     #       necessarily create new nodes.
     #
-    # Set the bst's root to the result of inserting the key at that root.
+    # Set the given bst's root to the result of inserting the given key at the
+    #  given bst's root.
     pass
 
 
 def _insert(bst, node, key):
     # NOTE: Functions ought to take as input problems and produce as output
-    #       solutions. In this case, the input is a tree without the given key
-    #       (the problem) and the solution ought to be the tree with that given
-    #       key (the solution).
+    #       solutions. Here, the input is the root node of a subtree without
+    #       the key (the problem), and the output is the root node of the
+    #       resulting subtree with the key (the solution).
     #
     # If the given node is None, then:
-    #     Create a new node containing the given key with no children.
-    #     Increment the given bst's size.
+    #     Create a new node containing the given key.
+    #     Increment the size.
     #     Return the new node.
-    # Else if the given key is equal to the given node's key:
-    #     (the key is already in the BST -- do whatever is supposed to be done
-    #      with duplicate keys, e.g., overwrite their associated value)
+    # Else if the given key is less than the given node's key, then:
+    #     Set the given node's left to the result of recursively inserting the
+    #      given key into the given node's left.
     #     Return the given node.
-    # Else if the given key is less than the given node's key:
-    #     Set the given node's left to the result of inserting the given key at
-    #      the given node's left.
+    # Else if the given key is greater than the given node's key, then:
+    #     Set the given node's right to the result of recursively inserting the
+    #      given key into the given node's right.
     #     Return the given node.
-    # Else if the given key is greater than the given node's key:
-    #     Set the given node's right to the result of inserting the given key
-    #      at the given node's right.
+    # Else, do:
+    #     (the given key is already in the given node -- do whatever is
+    #      supposed to be done with duplicate keys, e.g., overwrite its value)
     #     Return the given node.
     pass
 
