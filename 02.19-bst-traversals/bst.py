@@ -92,6 +92,7 @@ def _remove(bst, node, key):
     #         Set the given node's right to the result of recursively removing
     #          that smallest key from the given node's right.
     #         Set the given node's key to that smallest key.
+    #         Return the given node.
     #
     # Else if the given key is less than the given node's key, then:
     #     Set the given node's left to the result of recursively removing the
