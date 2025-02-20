@@ -25,11 +25,11 @@ def find(bst, key):
     pass
 
 
-def _find(bst, node, key):
+def _find(node, key):
     # If the given node is None, then:
-    #     (the given key does not exist in the given BST)
+    #     (the given key does not exist)
     # Else if the given key is equal to the given node's key, then:
-    #     (the given key is in the given node)
+    #     (the given node contains the given key)
     # Else if the given key is less than the given node's key, then:
     #     Return the result of finding the given key at the given node's left.
     # Else, do:
