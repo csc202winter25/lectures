@@ -11,18 +11,20 @@ class PriorityQueue:
 
 
 def enqueue(pqueue, value):
-    # TODO: Add the value as a node in the binary heap, which must be either
-    #       the next leaf in the lowest (not-yet-filled) level or the first
-    #       leaf in a new lowest (if the old lowest was filled) level, so as to
-    #       maintain the completeness of the tree. Then rearrange the nodes in
-    #       order to restore the heap property.
+    # TODO: Add the value as a new node in the tree. That node must be either
+    #       the next leaf in the lowest (partially filled) level or the first
+    #       leaf in a new lowest (if the old lowest was full) level, so as to
+    #       maintain the completeness of the tree. Then rearrange nodes as
+    #       necesssary in order to maintain the heap property.
     pass
 
 
 def dequeue(pqueue):
-    # TODO: Remove the root node and replace it with the last leaf in the
-    #       lowest level, so as to maintain the completeness of the tree. Then
-    #       rearrange the nodes in order to restore the heap property.
+    # TODO: Remove the root and replace it with the last leaf in the lowest
+    #       level (the same very particular position to which we add leaves
+    #       when enqueueing), so as to maintain both the structural integrity
+    #       and the completeness of the tree. Then rearrange nodes as necessary
+    #       in order to maintain the heap property.
     pass
 
 
