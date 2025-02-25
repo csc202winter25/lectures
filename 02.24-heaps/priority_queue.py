@@ -11,12 +11,11 @@ class PriorityQueue:
 
 
 def enqueue(pqueue, value):
-    # TODO: Add the value as a new node in the tree. That node must be either
-    #       the next leaf in the lowest (partially filled) level or the first
-    #       leaf in a new lowest (if the old lowest was full) level, so as to
-    #       maintain the completeness of the tree. Then rearrange nodes as
-    #       necesssary in order to maintain the heap property: repeatedly swap
-    #       the current node with its parent if the current node is larger.
+    # TODO: Adding the value as a new node in the tree, either the next leaf in
+    #       the lowest (partially filled) level or the first leaf in a new
+    #       lowest (if the lowest was full) level, maintains the completeness
+    #       of the tree. Then repeatedly swap the current node with its parent
+    #       if the current node is larger, to restore the heap property.
     #
     # If the size is equal to the capacity, then:
     #     Set the capacity to capacity * 2.
@@ -39,19 +38,18 @@ def enqueue(pqueue, value):
 
 
 def dequeue(pqueue):
-    # TODO: Remove the root and replace it with the last leaf in the lowest
+    # NOTE: Removing the root and replacing it with the last leaf in the lowest
     #       level (the same very particular position to which we add leaves
-    #       when enqueueing), so as to maintain both the structural integrity
-    #       and the completeness of the tree. Then rearrange nodes as necessary
-    #       in order to maintain the heap property: repeatedly swap the current
-    #       node with its larger child if the current node is smaller.
+    #       when enqueueing) maintains both the structural integrity and the
+    #       completeness of the tree. Then repeatedly swap the current node
+    #       with its larger child if the current node is smaller.
     #
     # Start with index i being the index of the root (index 1).
     # Set element i to the value of the last leaf (index size).
     #
-    # While 2 * i is less than or equal to size (while i is not a leaf), do:
-    #     If index 2 * i + 1 is greater than size or element 2 * i is greater
-    #      than element 2 * i + 1, then:
+    # While 2 * i is less than or equal to size (i is not a leaf), do:
+    #     If 2 * i + 1 is greater than size or element 2 * i is greater than
+    #      element 2 * i + 1, then:
     #         If element 2 * i is greater than element i, then:
     #             Swap element i with element 2 * i.
     #             Set i to 2 * i.
