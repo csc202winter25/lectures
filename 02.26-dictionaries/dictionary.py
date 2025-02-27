@@ -12,8 +12,8 @@ class Dictionary:
 
 def get(dct, key):
     # NOTE: Essentially, this is an array list in which we have to convert the
-    #       keys (of arbitrary type) into indices before we can access their
-    #       values within the array.
+    #       keys (which may have arbitrary type) into valid indices before we
+    #       can access their values within the array.
     #
     # Hash the given key and mod it by the capacity.
     # Return the element at that hash code in the array.
@@ -21,9 +21,9 @@ def get(dct, key):
 
 
 def insert(dct, key, value):
-    # TODO: This only works as long as there are no collisions. If two keys
-    #       were ever to hash to the same index, we would have no way of
-    #       knowing whether we were overwriting a different existing key.
+    # TODO: This only works as long as there are no collisions. If ever two
+    #       different keys were to hash to the same index, we would have no way
+    #       of knowing whether we were overwriting the other key's value.
     #
     # Hash the given key and mod it by the capacity.
     #
