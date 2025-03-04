@@ -25,11 +25,11 @@ class Node:
 def get(dct, key):
     # Hash the given key and mod it by the capacity.
     #
-    # Start with the current node being the head at that hash code.
+    # Start with a current node being the head at that hash code.
     # While the current node's key is not the given key, do:
     #     Set the current node to the current node's next.
     #
-    # Return the given node's value.
+    # Return the current node's value.
     pass
 
 
@@ -45,9 +45,9 @@ def insert(dct, key, value):
     #     NOTE: Essentially, a separate chaining hash table stores key-value
     #           pairs in a bunch of (hopefully) smaller linked lists, then uses
     #           a hash function quickly narrow down which list might contain
-    #           the key-value pair we are interested in.
+    #           the desired key-value pair.
     #
-    #     Start with the current node being the head at that hash code.
+    #     Start with a current node being the head at that hash code.
     #     While the current node's key is not the given key, do:
     #         If the current node's next is None, then:
     #             Create a new node containing the given key and value.
