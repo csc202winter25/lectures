@@ -34,6 +34,30 @@ def get(dct, key):
 
 
 def insert(dct, key, value):
+    # If the size is equal to the capacity, then:
+    #     NOTE: Once the load factor exceeds 1, a collision is inevitable, and
+    #           the capacity must be increased. Ideally, the new capacity would
+    #           be prime, but doubling and adding one is decent compromise that
+    #           is relatively easy to compute.
+    #
+    #     Set the capacity to capacity * 2 + 1.
+    #     Create a new array of that capacity.
+    #
+    #     NOTE: All of the existing keys' hash codes were computed mod the old
+    #           capacity. Now that the capacity has changed, they may need to
+    #           be moved to different indices within the new array. Note this
+    #           is essentially a 2D structure of linked lists within an array.
+    #
+    #     For i from 0 to the old capacity, do:
+    #         Start with a current node being the head at i in the old array.
+    #         While the current node is not None, do:
+    #             Rehash the current node's key and mod it by the new capacity.
+    #             (insert the current node at the head of the linked list at
+    #              that new hash code in the new array)
+    #             Set the current node to the current node's next.
+    #
+    #     Set the array to the new array.
+    #
     # Hash the given key and mod it by the capacity.
     #
     # If the head at that hash code in the array is None, then:
@@ -71,4 +95,8 @@ def remove(dct, key):
 
 
 def keys(dct):
+    # TODO: Iterate over all of the key-value pairs, in the same manner as when
+    #       rehashing: for each index in the array, and for each node in the
+    #       corresponding linked list, but then add each node's key to a new
+    #       list to be returned rather than rehashing it.
     pass
