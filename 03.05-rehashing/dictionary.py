@@ -34,6 +34,36 @@ def get(dct, key):
 
 
 def insert(dct, key, value):
+    # NOTE: Once the size is equal to the capacity -- once the load factor
+    #       exceeds 1 -- a collision is inevitable, and the hash table must be
+    #       rehashed in order to prevent the linked lists from getting too
+    #       long. Ideally, the new capacity would be prime, but doubling and
+    #       adding one is a decent compromise that is easy to compute.
+    #
+    # If the size is equal to the capacity, then:
+    #     Set the capacity to capacity * 2 + 1.
+    #     Create a new array of that capacity.
+    #
+    #     NOTE: The hash codes were previously computed mod the old capacity.
+    #           Now that the capacity has changed, all of the existing elements
+    #           must be rehashed and potentially moved to new indices. The
+    #           table is essentially a doubly nested list, where the outer list
+    #           is an array list and the inner lists are linked lists. Further
+    #           note that it is generally possible for two existing keys to
+    #           collide after rehashing, however, all keys being rehashed must
+    #           be unique, so colliding keys can be placed at the beginnings of
+    #           their linked lists instead of the ends.
+    #
+    #     For i from 0 to the old capacity, do:
+    #         Start with a current node being the head at index i.
+    #         While the current node is not None, do:
+    #             Rehash the current node's key and mod it by the new capacity.
+    #             (insert the current node at the head at that new hash code in
+    #              the new array)
+    #             Set the current node to the current node's next.
+    #
+    #     Set the array to the new array.
+    #
     # Hash the given key and mod it by the capacity.
     #
     # If the head at that hash code in the array is None, then:
@@ -71,4 +101,8 @@ def remove(dct, key):
 
 
 def keys(dct):
+    # TODO: Iterate over all of the key-value pairs, just as in rehashing: loop
+    #       through all indices in the array, then loop through all nodes in
+    #       each corresponding linked list. Rather than rehashing those nodes,
+    #       add their keys to a new list to be returned.
     pass
