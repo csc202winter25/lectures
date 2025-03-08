@@ -5,14 +5,12 @@ class Graph:
     """ A collection of vertices and edges """
 
     def __init__(self):
-        # NOTE: Adjacency lists are ideal when a graph is dynamic and sparse;
-        #       adjacency matrices are ideal when it is static and dense. We
-        #       can get the best of both worlds by storing the matrix as a
-        #       2D nested dictionary:
-        #         * The "outer" dictionary is the matrix, and maps vertex
-        #           identifiers to "inner" dictionaries.
-        #         * Each "inner" dictionary corresponds to one vertex, and maps
-        #           its neighbors' identifiers to 1s.
+        # NOTE: A 2D nested dictionary can be faster than an adjacency list and
+        #       smaller than an adjacency matrix:
+        #         * The "outer" dictionary is the matrix, and maps vertices to
+        #           "inner" dictionaries.
+        #         * Each "inner" dictionary is one row within the matrix, and
+        #           maps neighboring vertices to 1's.
         #
         # The backing adjacency matrix:
         self.matrix = dct.Dictionary()
@@ -25,8 +23,8 @@ class Graph:
 
 
 def add_vertex(graph, vertex):
-    # Create a new empty dictionary.
-    # Insert the given vertex into the matrix, mapped to the empty dictionary.
+    # Create a new empty dictionary (the vertex has no neighbors yet).
+    # Insert the given vertex into the matrix, mapped to that dictionary.
     pass
 
 
@@ -41,11 +39,11 @@ def add_edge(graph, vertex_u, vertex_v):
 
 def remove_vertex(graph, vertex):
     # Get the given vertex's dictionary from the matrix.
-    # Get the list of that dictionary's keys (the vertex's neighbors).
+    # Get the list of that dictionary's keys (the given vertex's neighbors).
     #
     # For i from 0 to that list's size, do:
-    #     Get the i'th key from that list (the vertex's i'th neighbor).
-    #     Remove the edge between the given vertex and the i'th key.
+    #     Get the i'th element of that list (the given vertex's i'th neighbor).
+    #     Remove the edge between the given vertex and the i'th element.
     #
     # Remove the given vertex from the matrix.
     pass
