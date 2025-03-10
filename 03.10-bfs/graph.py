@@ -48,4 +48,38 @@ def remove_edge(graph, vertex_u, vertex_v):
 
 
 def path(graph, vertex_u, vertex_v):
+    # NOTE: Like a level-order traversal, vertices to be explored must be in
+    #       a queue, such that closer vertices are encountered and explored
+    #       before further, and thus shorter paths are traversed before longer.
+    #
+    # Create a new, empty queue (of vertices to be explored).
+    # Enqueue vertex_u to the queue.
+    #
+    # NOTE: Unlike tree traversals, since any vertex can be connected to any
+    #       other vertex, there must be some way of differentiating vertices
+    #       that have already been explored, to avoid exploring them again.
+    #
+    # Create a new, empty dictionary (of predecessors along the path).
+    # Insert vertex_u into the predecessors dictionary, mapped to itself.
+    #
+    # While the queue is not empty, do:
+    #     Dequeue a current vertex from the queue.
+    #     Get the current vertex's dictionary from the matrix.
+    #     Get the list of that dictionary's keys (the current's neighbors).
+    #
+    #     If the current vertex is vertex_v, then:
+    #         (return the path, which is in the predecessors dictionary)
+    #
+    #     For i from 0 to that list's size, do:
+    #         Get the i'th element of that list (the current's i'th neighbor).
+    #         If that i'th element is not in the predecessors dictionary, then:
+    #             Enqueue that i'th element to the queue.
+    #             Insert that i'th element into the predecessors dictionary,
+    #              mapped to the current vertex.
+    #
+    # NOTE: The only way to get this far is for the queue to be empty and to
+    #       have never encountered vertex_v, in which case there are no paths
+    #       from vertex_u to vertex_v, shortest or otherwise.
+    #
+    # (there are no paths from vertex_u to vertex_v)
     pass
