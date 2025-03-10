@@ -68,7 +68,7 @@ def path(graph, vertex_u, vertex_v):
     #     Get the list of that dictionary's keys (the current's neighbors).
     #
     #     If the current vertex is vertex_v, then:
-    #         (return the path, which is in the predecessors dictionary)
+    #         (return the path to vertex_v in the predecessors dictionary)
     #
     #     For i from 0 to that list's size, do:
     #         Get the i'th element of that list (the current's i'th neighbor).
